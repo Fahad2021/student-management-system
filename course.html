@@ -76,8 +76,8 @@
     <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Create New Course
     </button>
-    <!--course add Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- course add Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -107,7 +107,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   </div>
 
   <!--edit Modal -->
@@ -141,28 +141,6 @@
     </div>
   </div>
 
-  <!-- details Modal -->
-  <div class="modal fade" id="DetailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Details Course</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form class="row g-3">
-            <div class="col-md-4">
-              <label for="validationDefault01" id="courseid" class="form-label">Course name</label>
-            </div>
-            <div class="col-md-4">
-              <label for="validationDefault02" id="durationid" class="form-label">Duration</label>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!--delete Modal -->
   <div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -173,12 +151,16 @@
         </div>
         <div class="modal-body">
           <form class="row g-3">
+            <!-- <div class="col-md-4">
+              <label for="validationDefault01" class="form-label">Course Id</label>
+              <input type="text" class="form-control" id="delcourseid" value="" required>
+            </div> --> 
             <div class="col">
               <label for="validationDefault01" class="form-label">Warning!!!Are you sure to Delete Course?</label>
             </div>
 
             <div class="col-12">
-              <button class="btn btn-secondary" id="deletid" type="submit">Confirm</button>
+              <button class="btn btn-secondary" id="deletid" type="button">Confirm</button>
             </div>
           </form>
         </div>
@@ -187,34 +169,63 @@
   </div>
   <!-- showing table -->
   <div class="conainer my-4 col-8 offset-2">
-    <table class="table">
+<table class="table table-striped">
+  <tr class="bg-info">
+    <th>id</th>
+    <th>course name</th>
+    <th>duration</th>
+  </tr>
+  <tbody id="myTable">
+    
+  </tbody>
+</table>
+
+    <!-- <h1 class="text-center">Course Table</h1>
+    <div class="container">
+    <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody id="table_body">
+        </tbody>
+      </table>
+    </div> -->
+
+<!-- <ul > -->
+  <!-- table for showing data -->
+<!-- <table id="course"></table> -->
+<!-- </body>
+</table>
+<table class="table">
       <thead>
         <tr>
-          <th scope="col">No.</th>
-          <th scope="col">Course Name</th>
-          <th scope="col">Duration</th>
+          <th scope="col" data-field="id">No.</th>
+          <th scope="col" data-field="course_nam">Course Name</th>
+          <th scope="col" data-field="duration">Duration</th>
           <th scope="col">Update</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>java</td>
-          <td>6</td>
+          <td id="course_container"></td>
+          <td></td>
           <td>
             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
             data-bs-target="#editeModal">Edit</button>
-            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" id="showsubmit"
-            data-bs-target="#DetailsModal" data-bs-toggle="modal"
-            data-bs-target="#DeleteModal">Details</button>
             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
             data-bs-target="#DeleteModal">Delete</button>
           </td>
         </tr>
 
       </tbody>
-    </table>
-  </div>
+    </table> -->
+</div>
   <script src="static/js/courseapi.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

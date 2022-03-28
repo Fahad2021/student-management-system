@@ -85,25 +85,27 @@
             <div class="modal-body">
               <form class="row g-3">
                 <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label">Id</label>
+                  <input type="text" class="form-control" id="id" value="" required>
+                </div>
+                <div class="col-md-4">
                   <label for="validationDefault01" class="form-label">First Name</label>
-                  <input type="text" class="form-control" id="validationDefault01" value="" required>
+                  <input type="text" class="form-control" id="firstnameid" value="" required>
                 </div>
                 <div class="col-md-4">
                   <label for="validationDefault02" class="form-label">Last Nmae</label>
-                  <input type="text" class="form-control" id="validationDefault02" value="" required>
+                  <input type="text" class="form-control" id="lastnameid" value="" required>
                 </div>
                 <div class="col-md-4">
                   <label for="validationDefault02" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="validationDefault02" value="" required>
+                  <input type="text" class="form-control" id="emailid" value="" required>
                 </div>
                 <div class="col-md-4">
                   <label for="validationDefault02" class="form-label">Phone</label>
-                  <input type="text" class="form-control" id="validationDefault02" value="" required>
-                </div>
-                
-                
+                  <input type="text" class="form-control" id="phoneid" value="" required>
+                </div>               
                 <div class="col-12">
-                  <button class="btn btn-secondary" type="submit">Confirm</button>
+                  <button class="btn btn-secondary" id="submitreg" type="submit">Confirm</button>
                 </div>
               </form>
             </div>
@@ -203,6 +205,7 @@
 
 <!-- showing table -->
     <div class="conainer my-4 col-8 offset-2">
+      <ul id="regestration_container"></ul>
       <table class="table">
           <thead>
             <tr>
@@ -222,11 +225,8 @@
               <td>fahad@gmail.com</td>
               <td>018554434434</td>
               <td>
-                <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editeModal">Edit</button>
-                  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal">Details</button>
-                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
-                </div>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"data-bs-target="#editeModal">Edit</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
             </td>
             </tr>
             
@@ -243,7 +243,7 @@
   </div>
 </footer> -->
 
-    
+    <script src="static/js/regestration.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
