@@ -4,21 +4,24 @@ fetch('https://localhost:44324/api/Batch')
 
 function displaybatch(batches) {
   let g = batches.payload;
-  console.log(batches);
-  const batchNames = Object.keys(g).map(function (batch_nam) {
-    return g[batch_nam];
-  });
-  
-  const ul = document.getElementById("batch_container");
+  console.log(g);
+  var table=document.getElementById('myTable')
+  for (let i = 0; i < g.length; i++) {
+    var row = `<tr>
+	  <td>${g[i].id}<td>
+	  <td>${g[i].batch_nam}<td>
+	  <td>${g[i].year}<td>
+    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#editeModal">Edit</button>
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+            data-bs-target="#DeleteModal">Delete</button>
+	  </tr>`
+		table.innerHTML += row
+	}
 
-  for (let i = 0; i < batchNames.length; i++) {
-    const batchname = batchNames[i];
-    // console.log(batchname);
-    const li = document.createElement("li");
-    li.innerText = batchname.batch_nam;
-    ul.appendChild(li);
-  }
 }
+  
+
 // creat
 document.getElementById("batchcon").addEventListener("click", function () {
   const batchid = document.getElementById("batchnoid").value;

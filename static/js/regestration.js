@@ -5,21 +5,26 @@ fetch('https://localhost:44324/api/Regestration')
 
 function displayReg(regestrations) {
   let g = regestrations.payload;
-  console.log(regestrations);
-  const regestrationNames = Object.keys(g).map(function (first_name) {
-    return g[first_name];
-  });
-  
-  const ul = document.getElementById("regestration_container");
-
-  for (let i = 0; i < regestrationNames.length; i++) { 
-    const regstrationame = regestrationNames[i];
-    // console.log(coursename);
-    const li = document.createElement("li");
-    li.innerText = regstrationame.first_name;
-    ul.appendChild(li);
-  }
+  console.log(g);
+  var table=document.getElementById('myTable')
+  for(var i=0;i<g.length;i++){
+  var row=`<tr>
+  <td>${g[i].id}<td>
+  <td>${g[i].first_name}<td>
+  <td>${g[i].last_name}<td>
+  <td>${g[i].email}<td>
+  <td>${g[i].phone}<td>
+  <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#editeModal">Edit</button>
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+            data-bs-target="#DeleteModal">Delete</button>
+  </tr>`
+  table.innerHTML += row
 }
+
+}
+
+
 // creat
 document.getElementById("submitreg").addEventListener("click", function () {
   const idno = document.getElementById("id").value;

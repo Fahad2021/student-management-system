@@ -186,7 +186,7 @@
 
 
 <!--delete Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -209,35 +209,21 @@
 </div>
    
 <!-- showing table -->
-    <div class="conainer my-4 col-8 offset-2">
-      <ul id="user_container"></ul>
-      <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">No.</th>
-              <th scope="col">First Name</th>
-              <th scope="col">Last Name</th>
-              <th scope="col">User Name</th>
-              <th scope="col">Password</th>
-              <th scope="col">Update</th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Fahad</td>
-              <td>Rahman</td>
-              <td>fahad123</td>
-              <td>123gk</td>
-              <td>
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"data-bs-target="#editeModal">Edit</button>
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
-            </td>
-            </tr>
-            
-          </tbody>
+    
+      <div class="conainer my-4 col-8 offset-2">
+        <table class="table table-striped">
+          <tr class="bg-info">
+            <th>User Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>User Name</th>
+            <th>Password</th>
+            <th>Update</th>
+          </tr>
+          <tbody id="myTable">
+        </tbody>
         </table>
+      </div>
     </div>
 
 

@@ -4,21 +4,25 @@ fetch('https://localhost:44324/api/User')
 
 function displayusers(users) {
   let g = users.payload;
-  console.log(users);
-  const userNames = Object.keys(g).map(function (first_name) {
-    return g[first_name];
-  });
-  
-  const ul = document.getElementById("user_container");
-
-  for (let i = 0; i < userNames.length; i++) {
-    const username = userNames[i];
-    // console.log(coursename);
-    const li = document.createElement("li");
-    li.innerText = username.first_name;
-    ul.appendChild(li);
+  console.log(g);
+  var table=document.getElementById('myTable')
+  for (var i = 0; i < g.length; i++) {
+    var row=`<tr>
+  <td>${g[i].id}<td>
+  <td>${g[i].first_name}<td>
+  <td>${g[i].last_name}<td>
+  <td>${g[i].user_name}<td>
+  <td>${g[i].password}<td>
+  <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#editeModal">Edit</button>
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+            data-bs-target="#DeleteModal">Delete</button>
+  </tr>`
+  table.innerHTML += row
+    
   }
-}
+ }
+
 // creat
 document.getElementById("submituser").addEventListener("click", function () {
   const idno = document.getElementById("userid").value;

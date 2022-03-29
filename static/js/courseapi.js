@@ -32,27 +32,15 @@ function displaycourse(courses) {
 	  <td>${g[i].id}<td>
 	  <td>${g[i].course_nam}<td>
 	  <td>${g[i].duration}<td>
+	  <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#editeModal">Edit</button>
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+            data-bs-target="#DeleteModal">Delete</button>
 	  </tr>`
 		table.innerHTML += row
 	}
 
 }
-
-// fetch("https://localhost:44324/api/Course").then((data)=>{
-// console.log(data);
-// return data.json();
-// }).then((objectData)=>{
-// console.log(objectData);
-// let tableData="";
-// objectData.map((values)=>{
-// tableData+=`<tr>
-//                 <td>${values.id}</td>
-//                 <td>${values.course_nam}</td>
-//                 <td>${values.duration}</td>
-//             </tr>`;
-// });
-// document.getElementById("table_body").innerHTML=tableData;
-// })
 
 // creat
 document.getElementById("submitbtn").addEventListener("click", function () {
@@ -78,3 +66,5 @@ function newPost(post) {
 		.then((data) => console.log(data));
 
 }
+
+// edit
