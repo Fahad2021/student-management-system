@@ -1,3 +1,4 @@
+// fetch data on table
 fetch('https://localhost:44324/api/Course')
 	.then(response => response.json())
 	.then(hi => displaycourse(hi))
@@ -54,29 +55,4 @@ function newPost(post) {
 
 }
 
-// edit
-document.getElementById("editsubmit").addEventListener("click", function () {
-	const courseid = document.getElementById("editcourseid").value;
-	const coursename = document.getElementById("coursenameid").value;
-	const durationtime = document.getElementById("editcoursenamid").value;
-	// console.log(title,bodyContent);
-	const post = { id: courseid, course_nam: coursename, duration: durationtime };
-	newPost(post);
-	console.log(post);
-	console.log("Click kora hoise");
-})
 
-function newPost(post) {
-	fetch('https://localhost:44324/api/Course/UpdateCourse', {
-		method: 'PUT',
-		body: JSON.stringify(post),
-		headers: {
-			'Content-type': 'application/json; charset=UTF-8'
-		}
-	})
-		.then((response) => response.json())
-		.then((data) => console.log(data));
-
-}
-
-// Delete

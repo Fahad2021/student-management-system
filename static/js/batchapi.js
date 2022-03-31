@@ -1,3 +1,4 @@
+// fetch data on table
 fetch('https://localhost:44324/api/Batch')
   .then(response => response.json())
   .then(hi => displaybatch(hi))
@@ -8,13 +9,16 @@ function displaybatch(batches) {
   var table=document.getElementById('myTable')
   for (let i = 0; i < g.length; i++) {
     var row = `<tr>
-	  <td>${g[i].id}<td>
-	  <td>${g[i].batch_nam}<td>
-	  <td>${g[i].year}<td>
-    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+	  <td>${g[i].id}</td>
+	  <td>${g[i].batch_nam}</td>
+	  <td>${g[i].year}</td>
+    <td><button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
             data-bs-target="#editeModal">Edit</button>
+          </td>
+            <td>
             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
             data-bs-target="#DeleteModal">Delete</button>
+            </td>
 	  </tr>`
 		table.innerHTML += row
 	}

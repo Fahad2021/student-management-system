@@ -1,3 +1,4 @@
+// fetch data on table
 fetch('https://localhost:44324/api/User')
   .then(response => response.json())
   .then(hi => displayusers(hi))
@@ -8,15 +9,19 @@ function displayusers(users) {
   var table=document.getElementById('myTable')
   for (var i = 0; i < g.length; i++) {
     var row=`<tr>
-  <td>${g[i].id}<td>
-  <td>${g[i].first_name}<td>
-  <td>${g[i].last_name}<td>
-  <td>${g[i].user_name}<td>
-  <td>${g[i].password}<td>
+  <td>${g[i].id}</td>
+  <td>${g[i].first_name}</td>
+  <td>${g[i].last_name}</td>
+  <td>${g[i].user_name}</td>
+  <td>${g[i].password}</td>
+  <td>
   <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
             data-bs-target="#editeModal">Edit</button>
+            </td>
+            <td>
             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
             data-bs-target="#DeleteModal">Delete</button>
+            </td>
   </tr>`
   table.innerHTML += row
     

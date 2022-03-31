@@ -9,15 +9,19 @@ function displayReg(regestrations) {
   var table=document.getElementById('myTable')
   for(var i=0;i<g.length;i++){
   var row=`<tr>
-  <td>${g[i].id}<td>
-  <td>${g[i].first_name}<td>
-  <td>${g[i].last_name}<td>
-  <td>${g[i].email}<td>
-  <td>${g[i].phone}<td>
+  <td>${g[i].id}</td>
+  <td>${g[i].first_name}</td>
+  <td>${g[i].last_name}</td>
+  <td>${g[i].email}</td>
+  <td>${g[i].phone}</td>
+  <td>
   <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
             data-bs-target="#editeModal">Edit</button>
+      </td>
+      <td>
             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
             data-bs-target="#DeleteModal">Delete</button>
+            </td>
   </tr>`
   table.innerHTML += row
 }
