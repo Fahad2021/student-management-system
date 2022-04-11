@@ -7,11 +7,12 @@ function displaycourse(courses) {
 	let g = courses.payload;
 	console.log(g);
 	var table = document.getElementById('myTable')
+	
 	for (let i = 0; i <= g.length; i++) {
 		let row = `<tr>
 		<td>${g[i].id}</td>
 		<td>${g[i].course_nam}</td>
-		<td>${g[i].duration}</td>
+		<td>${g[i].duration} Month</td>
 		<td>	  	
 			<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
 			data-bs-target="#editeModal">
@@ -19,7 +20,7 @@ function displaycourse(courses) {
 			</button>
 		</td>
 		<td>	  	
-			<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+			<button type="button" class="btn btn-outline-danger"  data-bs-toggle="modal"
 				data-bs-target="#DeleteModal">
 				Delete
 			</button>
@@ -38,7 +39,7 @@ document.getElementById("submitbtn").addEventListener("click", function () {
 	// console.log(title,bodyContent);
 	const post = { id: courseid, course_nam: coursename, duration: durationtime };
 	newPost(post);
-	console.log(post);
+	// console.log(post);
 	console.log("Click kora hoise");
 })
 
@@ -54,5 +55,29 @@ function newPost(post) {
 		.then((data) => console.log(data));
 
 }
+// edit course
+// https://localhost:44324/api/Course/UpdateCourse
 
 
+// delete course
+// // https://localhost:44324/api/Course/DeleteCourse
+// document.getElementById('exampleModalLabel').addEventListener('click',(e)=>{
+// 	console.log()
+// })
+
+document.getElementById("btnDelteYes").addEventListener("click", function () {
+	console.log("Click kora hoise");
+})
+
+// function newPost(post) {
+// 	fetch('https://localhost:44324/api/Course/DeleteCourse', {
+// 		method: 'DELETE',
+// 		body: JSON.stringify(post),
+// 		headers: {
+// 			'Content-type': 'application/json; charset=UTF-8'
+// 		}
+// 	})
+// 		.then((response) => response.json())
+// 		.then((data) => console.log(data));
+
+// }
